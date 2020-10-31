@@ -12,8 +12,9 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 
 # Funcionalidades!
 
-* [ ] Operações de adição
-* [ ] Subtração
+* [ ] Apresentar as ultimas 10 linhas com operações / valores / resultados
+* [X] Operações de adição
+* [X] Subtração
 * [ ] Multiplicação
 * [ ] Divisão
 * [ ] Raiz quadrada
