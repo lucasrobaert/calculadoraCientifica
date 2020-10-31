@@ -12,7 +12,7 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 
 # Funcionalidades!
 
-[ ] Operações de adição,
+[ ] Operações de adição
 [ ] Subtração
 [ ] Multiplicação
 [ ] Divisão
