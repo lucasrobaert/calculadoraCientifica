@@ -25,6 +25,25 @@
         app:layout_constraintStart_toEndOf="@+id/btn_number_6" />
 
     <Button
+        android:id="@+id/btn_multiplica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_9" />
+
+    <Button
+        android:id="@+id/btn_divisao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        app:layout_constraintBottom_toTopOf="@+id/btn_multiplica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_9" />
+
+    <Button
         android:id="@+id/btn_number_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

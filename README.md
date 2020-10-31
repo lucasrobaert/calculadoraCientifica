@@ -15,8 +15,8 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 * [ ] Apresentar as ultimas 10 linhas com operações / valores / resultados
 * [X] Operações de adição
 * [X] Subtração
-* [ ] Multiplicação
-* [ ] Divisão
+* [X] Multiplicação
+* [X] Divisão
 * [ ] Raiz quadrada
 * [ ] Módulo
 * [ ] Fatorial

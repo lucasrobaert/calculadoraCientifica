@@ -50,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         btn_sub.setOnClickListener {
             operacao = Operations.SUBTRACAO
         }
+        btn_divisao.setOnClickListener {
+            operacao = Operations.DIVISAO
+        }
+        btn_multiplica.setOnClickListener {
+            operacao = Operations.MULTIPLICACAO
+        }
 
         btn_equals.setOnClickListener {
             var result = resultado(number1.toDouble(), number2.toDouble(), operacao)
@@ -72,6 +78,12 @@ class MainActivity : AppCompatActivity() {
             Operations.SUBTRACAO -> {
                 resultado = number1 - number2
 
+            }
+            Operations.MULTIPLICACAO -> {
+                resultado = number1 * number2
+            }
+            Operations.DIVISAO -> {
+                resultado = number1 / number2
             }
         }
 
