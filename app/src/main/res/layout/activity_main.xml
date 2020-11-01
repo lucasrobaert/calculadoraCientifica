@@ -44,6 +44,76 @@
         app:layout_constraintStart_toEndOf="@+id/btn_number_9" />
 
     <Button
+        android:id="@+id/btn_raiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Raiz"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_7"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_modulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Modulo"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_8"
+        app:layout_constraintStart_toEndOf="@+id/btn_raiz" />
+
+    <Button
+        android:id="@+id/btn_fatorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Fatorial"
+        app:layout_constraintBottom_toTopOf="@+id/btn_raiz"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_inverter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Inverter sinal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_fatorial"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="LOG"
+        app:layout_constraintBottom_toTopOf="@+id/btn_potencia"
+        app:layout_constraintStart_toEndOf="@+id/btn_inverter" />
+
+    <Button
+        android:id="@+id/btn_potencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Potencia"
+        app:layout_constraintBottom_toTopOf="@+id/btn_modulo"
+        app:layout_constraintStart_toEndOf="@+id/btn_fatorial" />
+
+    <Button
+        android:id="@+id/btn_quadrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Quadrado"
+        app:layout_constraintBottom_toTopOf="@+id/btn_modulo"
+        app:layout_constraintStart_toEndOf="@+id/btn_potencia" />
+
+    <Button
         android:id="@+id/btn_number_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

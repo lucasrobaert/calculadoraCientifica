@@ -5,5 +5,8 @@ enum class Operations {
     SUBTRACAO,
     MULTIPLICACAO,
     DIVISAO,
+    RAIZ,
+    MODULO,
+    POTENCIA,
     SEM
 }

@@ -17,13 +17,13 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 * [X] Subtração
 * [X] Multiplicação
 * [X] Divisão
-* [ ] Raiz quadrada
-* [ ] Módulo
-* [ ] Fatorial
-* [ ] Potência
-* [ ] Quadrado
+* [X] Raiz quadrada
+* [X] Módulo
+* [X] Fatorial
+* [X] Potência
+* [X] Quadrado
 * [ ] Valor inverso
-* [ ] Log
+* [X] Log
 * [ ] Seno
 * [ ] Cosseno
 * [ ] Tangente
