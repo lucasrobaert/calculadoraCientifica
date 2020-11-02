@@ -24,13 +24,13 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 * [X] Quadrado
 * [ ] Valor inverso
 * [X] Log
-* [ ] Seno
-* [ ] Cosseno
-* [ ] Tangente
+* [X] Seno
+* [X] Cosseno
+* [X] Tangente
 * [ ] Inverso do seno
 * [ ] Inverso do conseno
 * [ ] Inverso da tangente
-* [ ] Logaritmo natural
+* [X] Logaritmo natural
 * [ ] Mudar sinal
 
 License

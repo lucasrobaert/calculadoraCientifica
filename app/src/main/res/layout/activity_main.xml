@@ -7,6 +7,76 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_tangente_inverso2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Inverso Tangente"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cosseno_inverso"
+        app:layout_constraintStart_toEndOf="@+id/btn_tangente_inverso" />
+
+    <Button
+        android:id="@+id/btn_seno_inverso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Inverso Seno"
+        app:layout_constraintBottom_toTopOf="@+id/btn_seno"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cosseno_inverso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="InversoCosseno"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cosseno"
+        app:layout_constraintStart_toEndOf="@+id/btn_seno_inverso" />
+
+    <Button
+        android:id="@+id/btn_tangente_inverso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Inverso Tangente"
+        app:layout_constraintBottom_toTopOf="@+id/btn_seno_inverso"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_seno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Seno"
+        app:layout_constraintBottom_toTopOf="@+id/btn_inverter"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_tangente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Tangente"
+        app:layout_constraintBottom_toTopOf="@+id/btn_log"
+        app:layout_constraintStart_toEndOf="@+id/btn_cosseno" />
+
+    <Button
+        android:id="@+id/btn_cosseno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Cosseno"
+        app:layout_constraintBottom_toTopOf="@+id/btn_log"
+        app:layout_constraintStart_toEndOf="@+id/btn_seno" />
+
+    <Button
         android:id="@+id/btn_soma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,6 +162,16 @@
         android:text="LOG"
         app:layout_constraintBottom_toTopOf="@+id/btn_potencia"
         app:layout_constraintStart_toEndOf="@+id/btn_inverter" />
+
+    <Button
+        android:id="@+id/btn_log_natural"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="LOG Natural"
+        app:layout_constraintBottom_toTopOf="@+id/btn_quadrado"
+        app:layout_constraintStart_toEndOf="@+id/btn_log" />
 
     <Button
         android:id="@+id/btn_potencia"
@@ -234,5 +314,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_dot" />
+
+    <ListView
+        android:id="@+id/lv_tela"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

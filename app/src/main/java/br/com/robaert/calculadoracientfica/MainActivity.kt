@@ -1,7 +1,9 @@
 package br.com.robaert.calculadoracientfica
 
+import android.media.VolumeShaper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,11 +17,10 @@ class MainActivity : AppCompatActivity() {
         var number1 = "0"
         var number2  = "0";
         var operacao: Operations = Operations.SEM;
-        var tela: List<String>? = null;
-        //  Digita o primeiro numero
-        // Digita a operacao
-        // Digita o segundo numero, caso precise;
-        // Tecla de resultado
+        var tela: MutableList<String> = mutableListOf("Teste")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, tela)
+        lv_tela.adapter = adapter;
 
         btn_number_0.setOnClickListener{
             if(operacao == Operations.SEM){
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
             }else{
                 number2 = number2 + "0"
             }
+            tela = resultTela(tela.toMutableList(), "0")
+            adapter.notifyDataSetChanged()
+            adapter.setNotifyOnChange(true)
         }
         btn_number_1.setOnClickListener{
             if(operacao == Operations.SEM){
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 number2 = number2 + "1"
             }
+            resultTela(tela, "1")
         }
 
         btn_number_2.setOnClickListener{
@@ -42,6 +47,8 @@ class MainActivity : AppCompatActivity() {
             }else{
                 number2 = number2 + "2"
             }
+
+            resultTela(tela, "2")
         }
         btn_number_3.setOnClickListener{
             if(operacao == Operations.SEM){
@@ -168,6 +175,56 @@ class MainActivity : AppCompatActivity() {
             number2 = "0"
         }
 
+        btn_log_natural.setOnClickListener {
+            var resultado = log(number1.toDouble()) / log(2.71);
+
+            Toast.makeText(this, "Resultado: " + resultado, Toast.LENGTH_LONG).show()
+            operacao = Operations.SEM
+            number1 = "0"
+            number2 = "0"
+        }
+
+        btn_seno.setOnClickListener {
+            var radiano = toRadians(number1.toDouble());
+            var resultado = sin(radiano);
+
+            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
+            operacao = Operations.SEM;
+            number1 = "0"
+            number2 = "0"
+        }
+        btn_seno_inverso.setOnClickListener {
+            //TODO: como calcula isso ?
+        }
+
+        btn_cosseno.setOnClickListener {
+            var radiano = toRadians(number1.toDouble());
+            var resultado = cos(radiano);
+
+            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
+            operacao = Operations.SEM;
+            number1 = "0"
+            number2 = "0"
+        }
+
+        btn_cosseno_inverso.setOnClickListener {
+            //TODO: como calcula isso ?
+        }
+
+        btn_tangente.setOnClickListener {
+            var radiano = toRadians(number1.toDouble());
+            var resultado = cos(radiano);
+
+            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
+            operacao = Operations.SEM;
+            number1 = "0"
+            number2 = "0"
+        }
+
+        btn_tangente_inverso.setOnClickListener {
+            //TODO: como calcula isso ?
+        }
+
         btn_equals.setOnClickListener {
             var result = resultado(number1.toDouble(), number2.toDouble(), operacao)
             operacao = Operations.SEM;
@@ -205,6 +262,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         return resultado;
+    }
+
+    fun resultTela(listaAtual: MutableList<String>, operacao: String): MutableList<String>{
+
+        if(listaAtual.size == 10){
+            listaAtual.removeFirst();
+        }
+        listaAtual.add(operacao)
+
+        return listaAtual;
     }
 
 
