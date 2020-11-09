@@ -10,268 +10,365 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Math.*
 
 class MainActivity : AppCompatActivity() {
+    var primeiroNumero = ""
+    var segundoNumero = ""
+    var operacaoFinal: Operations = Operations.SEM
+    var resultadoFinal: Double = 0.0;
+    var tela: MutableList<String> = mutableListOf("")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var number1 = "0"
-        var number2  = "0";
+        //var primeiroNumero = "0"
+        //var segundoNumero  = "0";
         var operacao: Operations = Operations.SEM;
-        var tela: MutableList<String> = mutableListOf("Teste")
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, tela)
-        lv_tela.adapter = adapter;
+        teTela.setText("");
+
 
         btn_number_0.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "0"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "0"
             }else{
-                number2 = number2 + "0"
+                segundoNumero = segundoNumero + "0"
             }
-            tela = resultTela(tela.toMutableList(), "0")
-            adapter.notifyDataSetChanged()
-            adapter.setNotifyOnChange(true)
+            teTela.setText(resultTela(tela, "0"))
         }
         btn_number_1.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "1"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "1"
             }else{
-                number2 = number2 + "1"
+                segundoNumero = segundoNumero + "1"
             }
-            resultTela(tela, "1")
+            teTela.setText(resultTela(tela, "1"))
         }
 
         btn_number_2.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "2"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "2"
             }else{
-                number2 = number2 + "2"
+                segundoNumero = segundoNumero + "2"
             }
 
-            resultTela(tela, "2")
+            teTela.setText(resultTela(tela, "2"))
         }
         btn_number_3.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "3"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "3"
             }else{
-                number2 = number2 + "3"
+                segundoNumero = segundoNumero + "3"
             }
+            teTela.setText(resultTela(tela, "3"))
         }
         btn_number_4.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "4"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "4"
             }else{
-                number2 = number2 + "4"
+                segundoNumero = segundoNumero + "4"
             }
+            teTela.setText(resultTela(tela, "4"))
         }
         btn_number_5.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "5"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "5"
             }else{
-                number2 = number2 + "5"
+                segundoNumero = segundoNumero + "5"
             }
+            teTela.setText(resultTela(tela, "5"))
         }
         btn_number_6.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "6"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "6"
             }else{
-                number2 = number2 + "6"
+                segundoNumero = segundoNumero + "6"
             }
+            teTela.setText(resultTela(tela, "6"))
         }
         btn_number_7.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "7"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "7"
             }else{
-                number2 = number2 + "7"
+                segundoNumero = segundoNumero + "7"
             }
+            teTela.setText(resultTela(tela, "7"))
         }
         btn_number_8.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "8"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "8"
             }else{
-                number2 = number2 + "8"
+                segundoNumero = segundoNumero + "8"
             }
+            teTela.setText(resultTela(tela, "8"))
         }
         btn_number_9.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "9"
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "9"
             }else{
-                number2 = number2 + "9"
+                segundoNumero = segundoNumero + "9"
             }
+            teTela.setText(resultTela(tela, "9"))
         }
         btn_dot.setOnClickListener{
-            if(operacao == Operations.SEM){
-                number1 = number1 + "."
+            if(operacaoFinal == Operations.SEM){
+                primeiroNumero = primeiroNumero + "."
             }else{
-                number2 = number2 + "."
+                segundoNumero = segundoNumero + "."
             }
+            teTela.setText(resultTela(tela, "."))
         }
 
         btn_soma.setOnClickListener{
-            operacao = Operations.SOMA
+            cacularComResultado()
+
+            operacaoFinal = Operations.SOMA
+            teTela.setText(resultTela(tela, "+"))
         }
 
         btn_sub.setOnClickListener {
-            operacao = Operations.SUBTRACAO
+            cacularComResultado()
+            operacaoFinal = Operations.SUBTRACAO
+            teTela.setText(resultTela(tela, "-"))
         }
         btn_divisao.setOnClickListener {
-            operacao = Operations.DIVISAO
+            cacularComResultado()
+            operacaoFinal = Operations.DIVISAO
+            teTela.setText(resultTela(tela, "/"))
         }
         btn_multiplica.setOnClickListener {
-            operacao = Operations.MULTIPLICACAO
+            cacularComResultado()
+            operacaoFinal = Operations.MULTIPLICACAO
+            teTela.setText(resultTela(tela, "x"))
         }
 
         btn_raiz.setOnClickListener {
-            var resultado = sqrt(number1.toDouble());
-            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            cacularComResultado()
+            operacaoFinal = Operations.RAIZ
+            resultado()
         }
 
         btn_modulo.setOnClickListener {
-            operacao = Operations.MODULO
+            cacularComResultado()
+            operacaoFinal = Operations.MODULO
         }
 
         btn_fatorial.setOnClickListener {
-            var fatorial = number1.toDouble()
-            var valor = number1.toDouble();
+            cacularComResultado()
+            var fatorial = primeiroNumero.toDouble()
+            var valor = primeiroNumero.toDouble();
             while (valor > 1){
                 fatorial = fatorial * (valor - 1)
                 valor --;
             }
 
             Toast.makeText(this,"Resultado: " + fatorial, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
 
         btn_potencia.setOnClickListener {
-            operacao = Operations.POTENCIA
+            cacularComResultado()
+            operacaoFinal = Operations.POTENCIA
         }
 
         btn_quadrado.setOnClickListener {
-            var resultado = pow(number1.toDouble(), 2.0);
+            cacularComResultado()
+            var resultado = pow(primeiroNumero.toDouble(), 2.0);
             Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
 
         btn_inverter.setOnClickListener {
+            cacularComResultado()
             // vai pegar o ultimo valor exibido e inverter o sinal
             // se for + vira -
             // se for - vira +
         }
 
         btn_log.setOnClickListener {
-            var resultado = log(number1.toDouble()) / log(10.0);
+            cacularComResultado()
+            var resultado = log10(primeiroNumero.toDouble());
             // TODO: verificar se essr trem ta certo
 
             Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
 
         btn_log_natural.setOnClickListener {
-            var resultado = log(number1.toDouble()) / log(2.71);
+            cacularComResultado()
+            var resultado = log(primeiroNumero.toDouble());
 
             Toast.makeText(this, "Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
 
         btn_seno.setOnClickListener {
-            var radiano = toRadians(number1.toDouble());
+            cacularComResultado()
+            var radiano = toRadians(primeiroNumero.toDouble());
             var resultado = sin(radiano);
 
             Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
         btn_seno_inverso.setOnClickListener {
+            cacularComResultado()
             //TODO: como calcula isso ?
         }
 
         btn_cosseno.setOnClickListener {
-            var radiano = toRadians(number1.toDouble());
+            cacularComResultado()
+            var radiano = toRadians(primeiroNumero.toDouble());
             var resultado = cos(radiano);
 
             Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
 
         btn_cosseno_inverso.setOnClickListener {
+            cacularComResultado()
             //TODO: como calcula isso ?
         }
 
         btn_tangente.setOnClickListener {
-            var radiano = toRadians(number1.toDouble());
+            cacularComResultado()
+            var radiano = toRadians(primeiroNumero.toDouble());
             var resultado = cos(radiano);
 
             Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
         }
 
         btn_tangente_inverso.setOnClickListener {
+            cacularComResultado()
             //TODO: como calcula isso ?
         }
 
+        btn_valor_inverso.setOnClickListener {
+            cacularComResultado()
+            var resultado = primeiroNumero.toDouble() * 1;
+
+            Toast.makeText(this, "Resultado: " + resultado, Toast.LENGTH_LONG).show()
+            operacaoFinal = Operations.SEM
+            primeiroNumero = "0"
+            segundoNumero = "0"
+        }
+
+
         btn_equals.setOnClickListener {
-            var result = resultado(number1.toDouble(), number2.toDouble(), operacao)
-            operacao = Operations.SEM;
-            number1 = "0"
-            number2 = "0"
+            var result = resultado()
+            operacaoFinal = Operations.SEM;
+            primeiroNumero = "0"
+            segundoNumero = "0"
+
+            teTela.setText(resultTela(tela, " = "+ result.toString() + "\n"))
 
             Toast.makeText(this,"Resultado: " + result, Toast.LENGTH_LONG).show()
         }
 
     }
 
-    fun resultado(number1: Double, number2: Double, operacao: Operations ): Double {
-        var resultado: Double = 0.0;
-        when(operacao){
+    fun numeroDigitado(number: String){
+        if(operacaoFinal == Operations.SEM){
+            primeiroNumero = primeiroNumero + number
+        }else{
+            segundoNumero = segundoNumero + number
+        }
+    }
+
+    fun resultado(): Double {
+        when(operacaoFinal){
             Operations.SOMA -> {
-                resultado = number1 + number2;
+                resultadoFinal = (primeiroNumero.toDouble() + segundoNumero.toDouble())
+                mostrarResultado(resultadoFinal)
 
             }
             Operations.SUBTRACAO -> {
-                resultado = number1 - number2
+                resultadoFinal = primeiroNumero.toDouble() - segundoNumero.toDouble()
+                mostrarResultado(resultadoFinal)
 
             }
             Operations.MULTIPLICACAO -> {
-                resultado = number1 * number2
+                resultadoFinal = primeiroNumero.toDouble() * segundoNumero.toDouble()
+                mostrarResultado(resultadoFinal)
             }
             Operations.DIVISAO -> {
-                resultado = number1 / number2
+                resultadoFinal = primeiroNumero.toDouble() / segundoNumero.toDouble()
+                mostrarResultado(resultadoFinal)
             }
             Operations.MODULO -> {
-                resultado = number1 % number2
+                resultadoFinal = primeiroNumero.toDouble() % segundoNumero.toDouble()
+                mostrarResultado(resultadoFinal)
             }
             Operations.POTENCIA -> {
-                resultado = pow(number1, number2)
+                resultadoFinal = pow(primeiroNumero.toDouble(), segundoNumero.toDouble())
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.RAIZ -> {
+                resultadoFinal = sqrt(primeiroNumero.toDouble())
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.FATORIAL -> {
+                var fatorial = primeiroNumero.toDouble()
+                var valor = primeiroNumero.toDouble();
+                while (valor > 1){
+                    fatorial = fatorial * (valor - 1)
+                    valor --;
+                }
+                mostrarResultado(fatorial)
             }
         }
 
-        return resultado;
+        return resultadoFinal;
     }
 
-    fun resultTela(listaAtual: MutableList<String>, operacao: String): MutableList<String>{
-
+    fun resultTela(listaAtual: MutableList<String>, operacao: String): String {
+        var retorno = "";
         if(listaAtual.size == 10){
             listaAtual.removeFirst();
         }
-        listaAtual.add(operacao)
+        if(!listaAtual.last().contains("\n")){
+            listaAtual[listaAtual.size-1] = listaAtual.last() + operacao;
+        }else{
+            listaAtual.add(operacao)
+        }
 
-        return listaAtual;
+
+        for(x in listaAtual){
+            retorno = retorno + x
+        }
+
+        return retorno;
+    }
+
+    fun mostrarResultado(resultado: Double){
+        Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
+        limpar()
+    }
+
+    fun cacularComResultado(){
+        if(primeiroNumero == "0" && resultadoFinal != 0.0){
+            primeiroNumero = resultadoFinal.toString();
+            teTela.setText(resultTela(tela, primeiroNumero))
+        }
+    }
+
+    fun limpar(){
+        primeiroNumero = ""
+        segundoNumero = ""
+        operacaoFinal = Operations.SEM
     }
 
 

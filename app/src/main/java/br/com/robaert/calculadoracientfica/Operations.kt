@@ -8,5 +8,6 @@ enum class Operations {
     RAIZ,
     MODULO,
     POTENCIA,
-    SEM
+    SEM,
+    FATORIAL,
 }
