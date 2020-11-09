@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         teTela.setText("");
 
 
-        btn_number_0.setOnClickListener{
+        tvNumero0.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "0"
             }else{
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "0"))
         }
-        btn_number_1.setOnClickListener{
+        tvNumero1.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "1"
             }else{
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             teTela.setText(resultTela(tela, "1"))
         }
 
-        btn_number_2.setOnClickListener{
+        tvNumero2.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "2"
             }else{
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
             teTela.setText(resultTela(tela, "2"))
         }
-        btn_number_3.setOnClickListener{
+        tvNumero3.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "3"
             }else{
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "3"))
         }
-        btn_number_4.setOnClickListener{
+        tvNumero4.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "4"
             }else{
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "4"))
         }
-        btn_number_5.setOnClickListener{
+        tvNumero5.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "5"
             }else{
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "5"))
         }
-        btn_number_6.setOnClickListener{
+        tvNumero6.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "6"
             }else{
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "6"))
         }
-        btn_number_7.setOnClickListener{
+        tvNumero7.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "7"
             }else{
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "7"))
         }
-        btn_number_8.setOnClickListener{
+        tvNumero8.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "8"
             }else{
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "8"))
         }
-        btn_number_9.setOnClickListener{
+        tvNumero9.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "9"
             }else{
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
             }
             teTela.setText(resultTela(tela, "9"))
         }
-        btn_dot.setOnClickListener{
+        tvPonto.setOnClickListener{
             if(operacaoFinal == Operations.SEM){
                 primeiroNumero = primeiroNumero + "."
             }else{
@@ -118,112 +118,122 @@ class MainActivity : AppCompatActivity() {
             teTela.setText(resultTela(tela, "."))
         }
 
-        btn_soma.setOnClickListener{
+        tvSoma.setOnClickListener{
             cacularComResultado()
 
             operacaoFinal = Operations.SOMA
             teTela.setText(resultTela(tela, "+"))
         }
 
-        btn_sub.setOnClickListener {
+        tvSubtracao.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.SUBTRACAO
             teTela.setText(resultTela(tela, "-"))
         }
-        btn_divisao.setOnClickListener {
+        tvDivisao.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.DIVISAO
             teTela.setText(resultTela(tela, "/"))
         }
-        btn_multiplica.setOnClickListener {
+        tvMultiplicao.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.MULTIPLICACAO
             teTela.setText(resultTela(tela, "x"))
         }
 
-        btn_raiz.setOnClickListener {
+        tvRaiz.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.RAIZ
+            teTela.setText(resultTela(tela, "RAIZ"))
             resultado()
         }
 
-        btn_modulo.setOnClickListener {
+        tvMod.setOnClickListener {
             cacularComResultado()
+            teTela.setText(resultTela(tela, "MOD"))
             operacaoFinal = Operations.MODULO
+            resultado()
         }
 
-        btn_fatorial.setOnClickListener {
+        tvFatorial.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.FATORIAL
+            teTela.setText(resultTela(tela, "FAT"))
             resultado()
         }
 
-        btn_potencia.setOnClickListener {
+        tvPotencia.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.POTENCIA
-            resultado()
+            teTela.setText(resultTela(tela, ""))
         }
 
-        btn_quadrado.setOnClickListener {
+        tvQuadrado.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.QUADRADO
+            teTela.setText(resultTela(tela, " ^ 2"))
             resultado()
 
         }
 
-        btn_inverter.setOnClickListener {
+        tvInverterSinal.setOnClickListener {
             cacularComResultado()
             // vai pegar o ultimo valor exibido e inverter o sinal
             // se for + vira -
             // se for - vira +
         }
 
-        btn_log.setOnClickListener {
+        tvLog.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.LOG
+            teTela.setText(resultTela(tela, "LOG"))
             resultado()
         }
 
-        btn_log_natural.setOnClickListener {
+        tvLogNatural.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.LOGNATURAL
+            teTela.setText(resultTela(tela, "LN"))
             resultado()
 
         }
 
-        btn_seno.setOnClickListener {
+        tvSeno.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.SENO
+            teTela.setText(resultTela(tela, "SENO"))
             resultado()
         }
-        btn_seno_inverso.setOnClickListener {
+        tvInversoSeno.setOnClickListener {
             cacularComResultado()
             //TODO: como calcula isso ?
         }
 
-        btn_cosseno.setOnClickListener {
+        tvCos.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.COSENO
+            teTela.setText(resultTela(tela, "COSSENO"))
             resultado()
         }
 
-        btn_cosseno_inverso.setOnClickListener {
+        tvInversoCos.setOnClickListener {
             cacularComResultado()
             //TODO: como calcula isso ?
         }
 
-        btn_tangente.setOnClickListener {
+        tvTangente.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.TANGENTE
+            teTela.setText(resultTela(tela, "TANGENTE"))
             resultado()
         }
 
-        btn_tangente_inverso.setOnClickListener {
+        tvInversoTangente.setOnClickListener {
             cacularComResultado()
             //TODO: como calcula isso ?
         }
 
-        btn_valor_inverso.setOnClickListener {
+        tvInverso.setOnClickListener {
             cacularComResultado()
             var resultado = primeiroNumero.toDouble() * 1;
 
@@ -234,7 +244,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        btn_equals.setOnClickListener {
+        tvIgual.setOnClickListener {
             var result = resultado()
             operacaoFinal = Operations.SEM;
             primeiroNumero = "0"

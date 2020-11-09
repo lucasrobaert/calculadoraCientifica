@@ -6,378 +6,445 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_valor_inverso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:text="Valor Inverso"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cosseno_inverso"
+    <TextView
+        android:id="@+id/tvInversoCos"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="I COS"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvCos"
+        app:layout_constraintEnd_toStartOf="@+id/tvInversoTangente"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvInversoSeno"
+        app:layout_constraintTop_toBottomOf="@+id/teTela" />
+
+    <TextView
+        android:id="@+id/tvCos"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="COS"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvPotencia"
+        app:layout_constraintEnd_toStartOf="@+id/tvTangente"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSeno"
+        app:layout_constraintTop_toBottomOf="@+id/tvInversoCos" />
+
+    <TextView
+        android:id="@+id/tvSeno"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="SIN"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvLogNatural"
+        app:layout_constraintEnd_toStartOf="@+id/tvCos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInversoSeno" />
+
+    <TextView
+        android:id="@+id/tvInversoTangente"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="I TAN"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvTangente"
+        app:layout_constraintEnd_toStartOf="@+id/tvInverso"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvInversoCos"
+        app:layout_constraintTop_toBottomOf="@+id/teTela" />
+
+    <TextView
+        android:id="@+id/tvInverso"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="INVERSO"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvInverterSinal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_tangente_inverso" />
+        app:layout_constraintStart_toEndOf="@+id/tvInversoTangente"
+        app:layout_constraintTop_toBottomOf="@+id/teTela" />
 
-    <Button
-        android:id="@+id/btn_seno_inverso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Inverso Seno"
-        app:layout_constraintBottom_toTopOf="@+id/btn_inverter"
-        app:layout_constraintEnd_toStartOf="@+id/btn_cosseno_inverso"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_cosseno_inverso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:text="InversoCosseno"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cosseno"
+    <TextView
+        android:id="@+id/tvInverterSinal"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="SINAL"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvLog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_seno_inverso" />
+        app:layout_constraintStart_toEndOf="@+id/tvTangente"
+        app:layout_constraintTop_toBottomOf="@+id/tvInverso" />
 
-    <Button
-        android:id="@+id/btn_tangente_inverso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Inverso Tangente"
-        app:layout_constraintBottom_toTopOf="@+id/btn_seno_inverso"
-        app:layout_constraintEnd_toStartOf="@+id/btn_valor_inverso"
+    <TextView
+        android:id="@+id/tvTangente"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="TAN"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvFatorial"
+        app:layout_constraintEnd_toStartOf="@+id/tvInverterSinal"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/tvCos"
+        app:layout_constraintTop_toBottomOf="@+id/tvInversoTangente" />
 
-    <Button
-        android:id="@+id/btn_seno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="sin"
-        app:layout_constraintBottom_toTopOf="@+id/btn_potencia"
-        app:layout_constraintEnd_toStartOf="@+id/btn_cosseno"
+    <TextView
+        android:id="@+id/tvInversoSeno"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="I SIN"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvSeno"
+        app:layout_constraintEnd_toStartOf="@+id/tvInversoCos"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_inverter" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teTela" />
 
-    <Button
-        android:id="@+id/btn_tangente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="2dp"
-        android:text="tan"
-        app:layout_constraintBottom_toTopOf="@+id/btn_log_natural"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/tvPotencia"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="x^y"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvMod"
+        app:layout_constraintEnd_toStartOf="@+id/tvFatorial"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_cosseno" />
+        app:layout_constraintStart_toEndOf="@+id/tvLogNatural"
+        app:layout_constraintTop_toBottomOf="@+id/tvCos" />
 
-    <Button
-        android:id="@+id/btn_cosseno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="cos"
-        app:layout_constraintBottom_toTopOf="@+id/btn_log"
-        app:layout_constraintEnd_toStartOf="@+id/btn_tangente"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_seno" />
-
-    <Button
-        android:id="@+id/btn_soma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        app:layout_constraintBottom_toTopOf="@+id/btn_equals"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_3" />
-
-    <Button
-        android:id="@+id/btn_sub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        app:layout_constraintBottom_toTopOf="@+id/btn_soma"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_6" />
-
-    <Button
-        android:id="@+id/btn_multiplica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="X"
-        app:layout_constraintBottom_toTopOf="@+id/btn_sub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_9" />
-
-    <Button
-        android:id="@+id/btn_divisao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="/"
-        app:layout_constraintBottom_toTopOf="@+id/btn_multiplica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_quadrado" />
-
-    <Button
-        android:id="@+id/btn_raiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Raiz"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_7"
-        app:layout_constraintEnd_toStartOf="@+id/btn_modulo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_modulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Modulo"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_8"
-        app:layout_constraintEnd_toStartOf="@+id/btn_quadrado"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_raiz" />
-
-    <Button
-        android:id="@+id/btn_fatorial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Fatorial"
-        app:layout_constraintBottom_toTopOf="@+id/btn_raiz"
-        app:layout_constraintEnd_toStartOf="@+id/btn_potencia"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_inverter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Inverter sinal"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_fatorial"
-        app:layout_constraintEnd_toStartOf="@+id/btn_seno"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_log"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
+    <TextView
+        android:id="@+id/tvLog"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
         android:text="LOG10"
-        app:layout_constraintBottom_toTopOf="@+id/btn_quadrado"
-        app:layout_constraintEnd_toStartOf="@+id/btn_log_natural"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_potencia" />
-
-    <Button
-        android:id="@+id/btn_log_natural"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:text="ln"
-        app:layout_constraintBottom_toTopOf="@+id/btn_divisao"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvLimpar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_log" />
+        app:layout_constraintStart_toEndOf="@+id/tvFatorial"
+        app:layout_constraintTop_toBottomOf="@+id/tvInverterSinal" />
 
-    <Button
-        android:id="@+id/btn_potencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Potencia"
-        app:layout_constraintBottom_toTopOf="@+id/btn_modulo"
-        app:layout_constraintEnd_toStartOf="@+id/btn_log"
+    <TextView
+        android:id="@+id/tvLimpar"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#F44336"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvDivisao"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_fatorial" />
+        app:layout_constraintStart_toEndOf="@+id/tvQuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/tvLog" />
 
-    <Button
-        android:id="@+id/btn_quadrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
+    <TextView
+        android:id="@+id/tvLogNatural"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="LN"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvRaiz"
+        app:layout_constraintEnd_toStartOf="@+id/tvPotencia"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeno" />
+
+    <TextView
+        android:id="@+id/tvFatorial"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="FATORIAL"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvQuadrado"
+        app:layout_constraintEnd_toStartOf="@+id/tvLog"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvPotencia"
+        app:layout_constraintTop_toBottomOf="@+id/tvTangente" />
+
+    <TextView
+        android:id="@+id/tvQuadrado"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
         android:text="x^2"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_9"
-        app:layout_constraintEnd_toStartOf="@+id/btn_divisao"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero9"
+        app:layout_constraintEnd_toStartOf="@+id/tvLimpar"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_modulo" />
+        app:layout_constraintStart_toEndOf="@+id/tvMod"
+        app:layout_constraintTop_toBottomOf="@+id/tvFatorial" />
 
-    <Button
-        android:id="@+id/btn_number_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="8"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_5"
-        app:layout_constraintEnd_toStartOf="@+id/btn_number_9"
+    <TextView
+        android:id="@+id/tvMod"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="MODULO"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero8"
+        app:layout_constraintEnd_toStartOf="@+id/tvQuadrado"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_7" />
+        app:layout_constraintStart_toEndOf="@+id/tvRaiz"
+        app:layout_constraintTop_toBottomOf="@+id/tvPotencia" />
 
-    <Button
-        android:id="@+id/btn_number_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="5"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_2"
-        app:layout_constraintEnd_toStartOf="@+id/btn_number_6"
+    <TextView
+        android:id="@+id/tvRaiz"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="RAIZ"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero7"
+        app:layout_constraintEnd_toStartOf="@+id/tvMod"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogNatural" />
 
-    <Button
-        android:id="@+id/btn_number_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="4"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_number_5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_number_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="9"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_6"
-        app:layout_constraintEnd_toStartOf="@+id/btn_multiplica"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_8" />
-
-    <Button
-        android:id="@+id/btn_number_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="6"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_3"
-        app:layout_constraintEnd_toStartOf="@+id/btn_sub"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_5" />
-
-    <Button
-        android:id="@+id/btn_number_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
+    <TextView
+        android:id="@+id/tvNumero7"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:text="7"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_4"
-        app:layout_constraintEnd_toStartOf="@+id/btn_number_8"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero4"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumero8"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRaiz" />
 
-    <Button
-        android:id="@+id/btn_number_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
+    <TextView
+        android:id="@+id/tvMultiplicao"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="x"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvSubtracao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNumero6"
+        app:layout_constraintTop_toBottomOf="@+id/tvDivisao" />
+
+    <TextView
+        android:id="@+id/tvNumero4"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero1"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumero5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero7" />
+
+    <TextView
+        android:id="@+id/tvDivisao"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="/"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvMultiplicao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNumero9"
+        app:layout_constraintTop_toBottomOf="@+id/tvLimpar" />
+
+    <TextView
+        android:id="@+id/tvNumero9"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="9"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero6"
+        app:layout_constraintEnd_toStartOf="@+id/tvDivisao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNumero8"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuadrado" />
+
+    <TextView
+        android:id="@+id/tvNumero5"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero2"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumero6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNumero4"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero8" />
+
+    <TextView
+        android:id="@+id/tvNumero6"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="6"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero3"
+        app:layout_constraintEnd_toStartOf="@+id/tvMultiplicao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNumero5"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero9" />
+
+    <TextView
+        android:id="@+id/tvNumero8"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero5"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumero9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNumero7"
+        app:layout_constraintTop_toBottomOf="@+id/tvMod" />
+
+    <TextView
+        android:id="@+id/tvNumero2"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:text="2"
-        app:layout_constraintBottom_toTopOf="@+id/btn_dot"
-        app:layout_constraintEnd_toStartOf="@+id/btn_number_3"
+        app:layout_constraintBottom_toTopOf="@+id/tvPonto"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumero3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_1" />
+        app:layout_constraintStart_toEndOf="@+id/tvNumero1"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero5" />
 
-    <Button
-        android:id="@+id/btn_number_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="3"
-        app:layout_constraintBottom_toTopOf="@+id/btn_equals"
-        app:layout_constraintEnd_toStartOf="@+id/btn_soma"
+    <TextView
+        android:id="@+id/tvSubtracao"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvSoma"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_2" />
+        app:layout_constraintStart_toEndOf="@+id/tvNumero3"
+        app:layout_constraintTop_toBottomOf="@+id/tvMultiplicao" />
 
-    <Button
-        android:id="@+id/btn_number_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
+    <TextView
+        android:id="@+id/tvNumero1"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:text="1"
-        app:layout_constraintBottom_toTopOf="@+id/btn_number_0"
-        app:layout_constraintEnd_toStartOf="@+id/btn_number_2"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumero0"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumero2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero4" />
 
-    <Button
-        android:id="@+id/btn_number_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_dot"
+    <TextView
+        android:id="@+id/tvNumero3"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@+id/tvIgual"
+        app:layout_constraintEnd_toStartOf="@+id/tvSubtracao"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/tvNumero2"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero6" />
 
-    <Button
-        android:id="@+id/btn_dot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
+    <TextView
+        android:id="@+id/tvPonto"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:text="."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_equals"
+        app:layout_constraintEnd_toStartOf="@+id/tvIgual"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_number_0" />
+        app:layout_constraintStart_toEndOf="@+id/tvNumero0"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero2" />
 
-    <Button
-        android:id="@+id/btn_equals"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="="
+    <TextView
+        android:id="@+id/tvSoma"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_dot" />
+        app:layout_constraintStart_toEndOf="@+id/tvIgual"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtracao" />
+
+    <TextView
+        android:id="@+id/tvIgual"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="#4CAF50"
+        android:gravity="center"
+        android:text="="
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSoma"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvPonto"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero3" />
 
     <TextView
         android:id="@+id/teTela"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:lines="10"
         android:maxLines="10"
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNumero0"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvPonto"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
