@@ -10,4 +10,10 @@ enum class Operations {
     POTENCIA,
     SEM,
     FATORIAL,
+    QUADRADO,
+    LOG,
+    LOGNATURAL,
+    SENO,
+    COSENO,
+    TANGENTE,
 }

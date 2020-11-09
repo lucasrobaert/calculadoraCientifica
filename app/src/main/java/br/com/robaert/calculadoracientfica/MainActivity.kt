@@ -154,31 +154,21 @@ class MainActivity : AppCompatActivity() {
 
         btn_fatorial.setOnClickListener {
             cacularComResultado()
-            var fatorial = primeiroNumero.toDouble()
-            var valor = primeiroNumero.toDouble();
-            while (valor > 1){
-                fatorial = fatorial * (valor - 1)
-                valor --;
-            }
-
-            Toast.makeText(this,"Resultado: " + fatorial, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.FATORIAL
+            resultado()
         }
 
         btn_potencia.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.POTENCIA
+            resultado()
         }
 
         btn_quadrado.setOnClickListener {
             cacularComResultado()
-            var resultado = pow(primeiroNumero.toDouble(), 2.0);
-            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.QUADRADO
+            resultado()
+
         }
 
         btn_inverter.setOnClickListener {
@@ -190,34 +180,21 @@ class MainActivity : AppCompatActivity() {
 
         btn_log.setOnClickListener {
             cacularComResultado()
-            var resultado = log10(primeiroNumero.toDouble());
-            // TODO: verificar se essr trem ta certo
-
-            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.LOG
+            resultado()
         }
 
         btn_log_natural.setOnClickListener {
             cacularComResultado()
-            var resultado = log(primeiroNumero.toDouble());
+            operacaoFinal = Operations.LOGNATURAL
+            resultado()
 
-            Toast.makeText(this, "Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM
-            primeiroNumero = "0"
-            segundoNumero = "0"
         }
 
         btn_seno.setOnClickListener {
             cacularComResultado()
-            var radiano = toRadians(primeiroNumero.toDouble());
-            var resultado = sin(radiano);
-
-            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.SENO
+            resultado()
         }
         btn_seno_inverso.setOnClickListener {
             cacularComResultado()
@@ -226,13 +203,8 @@ class MainActivity : AppCompatActivity() {
 
         btn_cosseno.setOnClickListener {
             cacularComResultado()
-            var radiano = toRadians(primeiroNumero.toDouble());
-            var resultado = cos(radiano);
-
-            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.COSENO
+            resultado()
         }
 
         btn_cosseno_inverso.setOnClickListener {
@@ -242,13 +214,8 @@ class MainActivity : AppCompatActivity() {
 
         btn_tangente.setOnClickListener {
             cacularComResultado()
-            var radiano = toRadians(primeiroNumero.toDouble());
-            var resultado = cos(radiano);
-
-            Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.TANGENTE
+            resultado()
         }
 
         btn_tangente_inverso.setOnClickListener {
@@ -321,13 +288,40 @@ class MainActivity : AppCompatActivity() {
                 mostrarResultado(resultadoFinal)
             }
             Operations.FATORIAL -> {
-                var fatorial = primeiroNumero.toDouble()
+                resultadoFinal = primeiroNumero.toDouble()
                 var valor = primeiroNumero.toDouble();
                 while (valor > 1){
-                    fatorial = fatorial * (valor - 1)
+                    resultadoFinal = resultadoFinal * (valor - 1)
                     valor --;
                 }
-                mostrarResultado(fatorial)
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.QUADRADO -> {
+                resultadoFinal = pow(primeiroNumero.toDouble(), 2.0)
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.LOG -> {
+                 resultadoFinal = log10(primeiroNumero.toDouble());
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.LOGNATURAL -> {
+                resultadoFinal = log(primeiroNumero.toDouble());
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.SENO -> {
+                var radiano = toRadians(primeiroNumero.toDouble());
+                resultadoFinal = sin(radiano);
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.COSENO -> {
+                var radiano = toRadians(primeiroNumero.toDouble());
+                resultadoFinal = cos(radiano);
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.TANGENTE -> {
+                var radiano = toRadians(primeiroNumero.toDouble());
+                resultadoFinal = cos(radiano);
+                mostrarResultado(resultadoFinal)
             }
         }
 
