@@ -10,8 +10,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Math.*
 
 class MainActivity : AppCompatActivity() {
-    var primeiroNumero = ""
-    var segundoNumero = ""
+    var primeiroNumero = "0"
+    var segundoNumero = "0"
     var operacaoFinal: Operations = Operations.SEM
     var resultadoFinal: Double = 0.0;
     var tela: MutableList<String> = mutableListOf("")
@@ -307,41 +307,38 @@ class MainActivity : AppCompatActivity() {
                 mostrarResultado(resultadoFinal)
             }
             Operations.LOG -> {
-                 resultadoFinal = log10(primeiroNumero.toDouble());
+                 resultadoFinal = log10(primeiroNumero.toDouble())
                 mostrarResultado(resultadoFinal)
             }
             Operations.LOGNATURAL -> {
-                resultadoFinal = log(primeiroNumero.toDouble());
+                resultadoFinal = log(primeiroNumero.toDouble())
                 mostrarResultado(resultadoFinal)
             }
             Operations.SENO -> {
-                var radiano = toRadians(primeiroNumero.toDouble());
-                resultadoFinal = sin(radiano);
+                var radiano = toRadians(primeiroNumero.toDouble())
+                resultadoFinal = String.format("%.3f",sin(radiano)).toDouble()
                 mostrarResultado(resultadoFinal)
             }
             Operations.SENOINVERSO ->{
-                var radiano = toRadians(primeiroNumero.toDouble())
-                resultadoFinal = asin(radiano)
+                resultadoFinal = String.format("%.3f",toDegrees(asin(primeiroNumero.toDouble()))).toDouble()
                 mostrarResultado(resultadoFinal)
             }
             Operations.COSSENO -> {
-                var radiano = toRadians(primeiroNumero.toDouble());
-                resultadoFinal = cos(radiano);
+                var radiano = toRadians(primeiroNumero.toDouble())
+                resultadoFinal = String.format("%.3f",cos(radiano)).toDouble()
                 mostrarResultado(resultadoFinal)
             }
             Operations.COSSENOINVERSO ->{
-                var radiano = toRadians(primeiroNumero.toDouble())
-                resultadoFinal = acos(radiano)
+                resultadoFinal = String.format("%.3f",toDegrees(acos(primeiroNumero.toDouble()))).toDouble()
                 mostrarResultado(resultadoFinal)
             }
             Operations.TANGENTE -> {
                 var radiano = toRadians(primeiroNumero.toDouble());
-                resultadoFinal = tan(radiano);
+                resultadoFinal = String.format("%.3f", tan(radiano)).toDouble()
                 mostrarResultado(resultadoFinal)
             }
             Operations.TANGENTEINVERSA -> {
-                var radiano = toRadians(primeiroNumero.toDouble())
-                resultadoFinal = atan(radiano)
+                resultadoFinal = String.format("%.3f",toDegrees(atan(primeiroNumero.toDouble()))).toDouble()
                 mostrarResultado(resultadoFinal)
             }
             Operations.INVERTE -> {
@@ -351,6 +348,9 @@ class MainActivity : AppCompatActivity() {
             Operations.INVERSO ->{
                 resultadoFinal = 1 / primeiroNumero.toDouble()
                 mostrarResultado(resultadoFinal)
+            }
+            Operations.SEM -> {
+                Toast.makeText(this, "Opps! Parece que você não pode realizar essa operação", Toast.LENGTH_LONG).show()
             }
         }
 

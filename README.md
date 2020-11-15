@@ -12,7 +12,7 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 
 # Funcionalidades!
 
-* [ ] Apresentar as ultimas 10 linhas com operações / valores / resultados
+* [x] Apresentar as ultimas 10 linhas com operações / valores / resultados
 * [X] Operações de adição
 * [X] Subtração
 * [X] Multiplicação
@@ -22,16 +22,16 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 * [X] Fatorial
 * [X] Potência
 * [X] Quadrado
-* [ ] Valor inverso
+* [x] Valor inverso
 * [X] Log
 * [X] Seno
 * [X] Cosseno
 * [X] Tangente
-* [ ] Inverso do seno
-* [ ] Inverso do conseno
-* [ ] Inverso da tangente
+* [x] Inverso do seno
+* [x] Inverso do conseno
+* [x] Inverso da tangente
 * [X] Logaritmo natural
-* [ ] Mudar sinal
+* [x] Mudar sinal
 
 License
 ----
