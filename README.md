@@ -12,25 +12,26 @@ Projeto desenvolvido para a disciplina de Android I - Pós-Graduação Aplicativ
 
 # Funcionalidades!
 
-* [ ] Operações de adição
-* [ ] Subtração
-* [ ] Multiplicação
-* [ ] Divisão
-* [ ] Raiz quadrada
-* [ ] Módulo
-* [ ] Fatorial
-* [ ] Potência
-* [ ] Quadrado
-* [ ] Valor inverso
-* [ ] Log
-* [ ] Seno
-* [ ] Cosseno
-* [ ] Tangente
-* [ ] Inverso do seno
-* [ ] Inverso do conseno
-* [ ] Inverso da tangente
-* [ ] Logaritmo natural
-* [ ] Mudar sinal
+* [x] Apresentar as ultimas 10 linhas com operações / valores / resultados
+* [X] Operações de adição
+* [X] Subtração
+* [X] Multiplicação
+* [X] Divisão
+* [X] Raiz quadrada
+* [X] Módulo
+* [X] Fatorial
+* [X] Potência
+* [X] Quadrado
+* [x] Valor inverso
+* [X] Log
+* [X] Seno
+* [X] Cosseno
+* [X] Tangente
+* [x] Inverso do seno
+* [x] Inverso do conseno
+* [x] Inverso da tangente
+* [X] Logaritmo natural
+* [x] Mudar sinal
 
 License
 ----
