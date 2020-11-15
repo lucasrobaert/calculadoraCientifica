@@ -14,6 +14,11 @@ enum class Operations {
     LOG,
     LOGNATURAL,
     SENO,
-    COSENO,
+    COSSENO,
     TANGENTE,
+    INVERTE,
+    INVERSO,
+    SENOINVERSO,
+    COSSENOINVERSO,
+    TANGENTEINVERSA
 }

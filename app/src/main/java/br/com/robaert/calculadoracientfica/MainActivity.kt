@@ -144,28 +144,28 @@ class MainActivity : AppCompatActivity() {
         tvRaiz.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.RAIZ
-            teTela.setText(resultTela(tela, "RAIZ"))
+            teTela.setText(resultTela(tela, " RAIZ "))
             resultado()
         }
 
         tvMod.setOnClickListener {
             cacularComResultado()
-            teTela.setText(resultTela(tela, "MOD"))
+            teTela.setText(resultTela(tela, " MOD "))
             operacaoFinal = Operations.MODULO
-            resultado()
         }
 
         tvFatorial.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.FATORIAL
-            teTela.setText(resultTela(tela, "FAT"))
+            teTela.setText(resultTela(tela, " FAT "))
             resultado()
         }
 
         tvPotencia.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.POTENCIA
-            teTela.setText(resultTela(tela, ""))
+            teTela.setText(resultTela(tela, " ^ "))
+
         }
 
         tvQuadrado.setOnClickListener {
@@ -178,22 +178,22 @@ class MainActivity : AppCompatActivity() {
 
         tvInverterSinal.setOnClickListener {
             cacularComResultado()
-            // vai pegar o ultimo valor exibido e inverter o sinal
-            // se for + vira -
-            // se for - vira +
+            operacaoFinal = Operations.INVERTE
+            teTela.setText(resultTela(tela, ""))
+            resultado()
         }
 
         tvLog.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.LOG
-            teTela.setText(resultTela(tela, "LOG"))
+            teTela.setText(resultTela(tela, " LOG "))
             resultado()
         }
 
         tvLogNatural.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.LOGNATURAL
-            teTela.setText(resultTela(tela, "LN"))
+            teTela.setText(resultTela(tela, " LN "))
             resultado()
 
         }
@@ -201,58 +201,54 @@ class MainActivity : AppCompatActivity() {
         tvSeno.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.SENO
-            teTela.setText(resultTela(tela, "SENO"))
+            teTela.setText(resultTela(tela, " SENO "))
             resultado()
         }
         tvInversoSeno.setOnClickListener {
             cacularComResultado()
-            //TODO: como calcula isso ?
+            operacaoFinal = Operations.SENOINVERSO
+            teTela.setText(resultTela(tela, " SENO I "))
+            resultado()
         }
 
         tvCos.setOnClickListener {
             cacularComResultado()
-            operacaoFinal = Operations.COSENO
-            teTela.setText(resultTela(tela, "COSSENO"))
+            operacaoFinal = Operations.COSSENO
+            teTela.setText(resultTela(tela, " COSSENO "))
             resultado()
         }
 
         tvInversoCos.setOnClickListener {
             cacularComResultado()
-            //TODO: como calcula isso ?
+            operacaoFinal = Operations.COSSENOINVERSO
+            teTela.setText(resultTela(tela, " COSSENO I "))
+            resultado()
         }
 
         tvTangente.setOnClickListener {
             cacularComResultado()
             operacaoFinal = Operations.TANGENTE
-            teTela.setText(resultTela(tela, "TANGENTE"))
+            teTela.setText(resultTela(tela, " TANGENTE "))
             resultado()
         }
 
         tvInversoTangente.setOnClickListener {
             cacularComResultado()
-            //TODO: como calcula isso ?
+            operacaoFinal = Operations.TANGENTEINVERSA
+            teTela.setText(resultTela(tela, " TANGENTE I "))
+            resultado()
         }
 
         tvInverso.setOnClickListener {
             cacularComResultado()
-            var resultado = primeiroNumero.toDouble() * 1;
-
-            Toast.makeText(this, "Resultado: " + resultado, Toast.LENGTH_LONG).show()
-            operacaoFinal = Operations.SEM
-            primeiroNumero = "0"
-            segundoNumero = "0"
+            operacaoFinal = Operations.INVERSO
+            teTela.setText(resultTela(tela, " INVERSO "))
+            resultado()
         }
 
 
         tvIgual.setOnClickListener {
-            var result = resultado()
-            operacaoFinal = Operations.SEM;
-            primeiroNumero = "0"
-            segundoNumero = "0"
-
-            teTela.setText(resultTela(tela, " = "+ result.toString() + "\n"))
-
-            Toast.makeText(this,"Resultado: " + result, Toast.LENGTH_LONG).show()
+            resultado()
         }
 
     }
@@ -323,14 +319,37 @@ class MainActivity : AppCompatActivity() {
                 resultadoFinal = sin(radiano);
                 mostrarResultado(resultadoFinal)
             }
-            Operations.COSENO -> {
+            Operations.SENOINVERSO ->{
+                var radiano = toRadians(primeiroNumero.toDouble())
+                resultadoFinal = asin(radiano)
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.COSSENO -> {
                 var radiano = toRadians(primeiroNumero.toDouble());
                 resultadoFinal = cos(radiano);
                 mostrarResultado(resultadoFinal)
             }
+            Operations.COSSENOINVERSO ->{
+                var radiano = toRadians(primeiroNumero.toDouble())
+                resultadoFinal = acos(radiano)
+                mostrarResultado(resultadoFinal)
+            }
             Operations.TANGENTE -> {
                 var radiano = toRadians(primeiroNumero.toDouble());
-                resultadoFinal = cos(radiano);
+                resultadoFinal = tan(radiano);
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.TANGENTEINVERSA -> {
+                var radiano = toRadians(primeiroNumero.toDouble())
+                resultadoFinal = atan(radiano)
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.INVERTE -> {
+                resultadoFinal = primeiroNumero.toDouble() * -1
+                mostrarResultado(resultadoFinal)
+            }
+            Operations.INVERSO ->{
+                resultadoFinal = 1 / primeiroNumero.toDouble()
                 mostrarResultado(resultadoFinal)
             }
         }
@@ -358,7 +377,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun mostrarResultado(resultado: Double){
-        Toast.makeText(this,"Resultado: " + resultado, Toast.LENGTH_LONG).show()
+        teTela.setText(resultTela(tela, " = "+ resultado.toString() + "\n"))
         limpar()
     }
 
@@ -370,8 +389,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun limpar(){
-        primeiroNumero = ""
-        segundoNumero = ""
+        primeiroNumero = "0"
+        segundoNumero = "0"
         operacaoFinal = Operations.SEM
     }
 
